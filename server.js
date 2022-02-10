@@ -23,11 +23,11 @@ const transporter = nodemailer.createTransport({
   });
 
 setTimeout(main, 0);
-setInterval(main, 20 * 60 * 1000);
+setInterval(main, 30 * 60 * 1000);
 
 async function main(){
     console.log("Starting...");
-    const browser = await puppeteer.launch(/*{ headless: false }*/);
+    const browser = await puppeteer.launch({/* headless: false */});
     const page = await browser.newPage();
     await page.goto('https://e-services.clalit.co.il/OnlineWeb/General/Login.aspx');
 
